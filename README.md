@@ -1,2 +1,1 @@
-# Hakan-ent-rk
-yardım edin.
+# Hakan Şentürk
