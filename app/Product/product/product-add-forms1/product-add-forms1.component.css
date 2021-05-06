@@ -1,0 +1,30 @@
+*{
+    margin-left: 20px;
+    
+}
+small{
+    color:red;
+}
+.intro{
+    width: 1240px;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* background: linear-gradient(#ff6f69,#ffcc5c,green); */
+    /* background: linear-gradient(45deg, #ffcc5c 20%, #3c3c3c 20% 50%, #ff6f69 50% 80%, #96ceb4 80%); */
+    /* background: linear-gradient(45deg, #ffcc5c 33%, rgba(0,0,0,0.6) 35%), url(https://images.unsplash.com/photo-1510519138101-570d1dca3d66); */
+    /* background: repeating-linear-gradient(155deg, #240152 2%, #4d3a79 4%, #ffcc5c 6%, #ffcc5c 8%); */
+    background: repeating-radial-gradient(farthest-side at 0% 10%, rgb(238, 255, 1) 0, rgb(4, 4, 7), rgb(30, 11, 134) .5%);
+}
+
+input, select,button{
+    width: 800px;
+    box-shadow: 10px 10px 10px rgb(117, 117, 117); 
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-width: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

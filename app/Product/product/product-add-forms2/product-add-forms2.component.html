@@ -1,0 +1,41 @@
+<h5>Yeni ürün ekle -Reactive</h5>
+
+<form class="needs-validation" [formGroup]="productAddForm" (ngSubmit)="add()" >
+    
+    <div class="form-group">
+        <input type="text" id="name" name="name" formControlName=name class="form-control" placeholder="ürün adı">
+        <div *ngIf="productAddForm.get('name').hasError('required') && productAddForm.get('name').dirty">
+            <small > ürün adı giriniz </small>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" id="description" name="description" formControlName=description class="form-control" placeholder="açıklama adı">
+        <div *ngIf="productAddForm.get('description').hasError('required') && productAddForm.get('description').dirty">
+            <small> açıklama giriniz </small>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" id="ImageUrl" name="ImageUrl" formControlName=ImageUrl class="form-control" placeholder="fotoğraf adı">
+        <div *ngIf="productAddForm.get('ImageUrl').hasError('required') && productAddForm.get('ImageUrl').dirty">
+            <small > fotoğraf giriniz </small>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" id="price" name="price" formControlName=price class="form-control" placeholder="fiyat giriniz">
+        <div *ngIf="productAddForm.get('price').hasError('required') && productAddForm.get('price').dirty">
+            <small > fiyat giriniz </small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select formControlName="categoryId" class="form-control"  id="categoryId" name="categoryId">
+            <option >kategori seçiniz</option>
+            <option *ngFor="let y of categoriler" [value]="y.id">{{y.name}}</option>
+            <option ></option>
+        </select>
+        <div *ngIf="productAddForm.get('categoryId').hasError('required') && productAddForm.get('categoryId').touched"><small>Kategori seçmek zorunludur</small> </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="productAddForm.invalid">Ürün Ekle</button>
+
+
+</form>

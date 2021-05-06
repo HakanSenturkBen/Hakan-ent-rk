@@ -1,0 +1,15 @@
+*{
+    margin-left: 20px;
+}
+small{
+    color:red;
+}
+
+input, select,button{
+    width: 800px;
+    box-shadow: 10px 10px 10px rgb(117, 117, 117);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-width: 3px;
+}

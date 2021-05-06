@@ -1,0 +1,76 @@
+<header class="intro">
+
+<form #userform="ngForm" (ngSubmit)="add(userform)" >
+    <div class="form-group">
+        <label >ürün adı</label>
+        <input  
+                [(ngModel)]="productModel.name"
+                type="text" 
+                #name="ngModel"
+                class="form-control"
+                placeholder="Ürün Adı: " 
+                name="name" 
+                id= "name" 
+                required
+                />
+        <div *ngIf="name.invalid&&name.dirty" style="color:red"><small>Ürün adı yazmanız zorunludur</small> </div>
+            
+    </div>
+    
+    <div class="form-group">
+        <label >Açıklama</label>
+        <input 
+                [(ngModel)]="productModel.description"
+                type="text" 
+                #description="ngModel"
+                class="form-control"
+                placeholder="Açıklama" 
+                name="description" 
+                id= "description" 
+                required>
+        <div *ngIf="description.invalid&&description.dirty" style="color:red"><small>açıklama yazmanız zorunludur</small> </div>
+            
+    </div>
+
+    <div class="form-group">
+        <label >İmaj url</label>
+        <input 
+                [(ngModel)]="productModel.ImageUrl"
+                type="text" 
+                #ImageUrl="ngModel"
+                class="form-control"
+                placeholder="Ürün resmi" 
+                name="ImageUrl" 
+                id= "ImageUrl" 
+                required>
+        <div *ngIf="ImageUrl.invalid&&ImageUrl.dirty" style="color:red"><small>ürün resmi zorunludur</small> </div>
+    </div>
+
+    <div class="form-group">
+        <label >Fiyat</label>
+        <input  
+                [(ngModel)]="productModel.price"
+                type="text"
+                #price="ngModel"
+                class="form-control"
+                placeholder="Ürün fiyatı" 
+                name="price" 
+                id= "price" 
+                required>
+        <div *ngIf="price.invalid&&price.dirty" style="color:red"><small>fiyat zinhar zorunludur</small> </div>
+    </div>
+
+    <div class="form-group">
+        <label >Kategori</label>
+        <select [(ngModel)]="productModel.categoryid" class="form-control"  id="categoryid" name="categoryid" #categoryid="ngModel" required>
+            <option >kategori seçiniz</option>
+            <option *ngFor="let y of categoriler" [value]="y.id">{{y.name}}</option>
+            <option ></option>
+        </select>
+        <div *ngIf="categoryid.invalid&&categoryid.touched" style="color:red"><small>Kategori seçmek zorunludur</small> </div>
+    </div>
+    <button type="button" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" [disabled]="userform.invalid">Ürün Ekle</button>
+
+
+</form>
+</header>

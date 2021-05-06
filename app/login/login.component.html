@@ -1,0 +1,25 @@
+<body class="text-center">
+    
+    <main class="form-signin">
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="form-signin">
+        
+        <h1 class="h3 mb-3 fw-normal">Sisteme giriş yapınız </h1>
+    
+        <div class="form-floating">
+          <input type="text" #userName="ngModel" [(ngModel)]="usermodel.userName" class="form-control" id="userName" name="userName"placeholder="Adınızı yazınız" required autofocus>
+          <label for="inputName">Kullanıcı Adı  </label>
+        </div>
+        <div class="form-floating">
+          <input type="password" #password="ngModel" [(ngModel)]="usermodel.password" name="password" class="form-control" id="password" placeholder="parola">
+          <label for="floatingPassword">Parola</label>
+        </div>
+    
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      </form>
+    </main>
+    
+    
+        
+      </body>
